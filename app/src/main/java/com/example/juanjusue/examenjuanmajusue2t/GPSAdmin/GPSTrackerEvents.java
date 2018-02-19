@@ -51,6 +51,7 @@ public class GPSTrackerEvents implements LocationListener {
             gpsTracker.showSettingsAlert();
         }
     }
+    ///_____________________________________________________________________________________________________\\\
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {

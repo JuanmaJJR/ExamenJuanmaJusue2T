@@ -126,7 +126,7 @@ class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminList
             // Writing Contacts to log
             Log.v("TUTORIALSQLLITE ", log);
         }
-        //______________________________\\
+        //______________________________________________________________________________\\
     }
     ///___________________________________________________________________________________________\\\
 }
