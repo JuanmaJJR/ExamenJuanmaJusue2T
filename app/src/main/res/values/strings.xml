@@ -2,4 +2,10 @@
     <string name="app_name">ExamenJuanmaJusue2T</string>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">dqAQ0NFW4MX6ztbKaMbHzKlxM</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">JkhdOY217Cq9scjAdp7lmNDPNOWM6AoApMa0yoJAY3qEwQUTZb</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

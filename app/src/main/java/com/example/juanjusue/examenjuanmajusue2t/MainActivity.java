@@ -1,8 +1,10 @@
 package com.example.juanjusue.examenjuanmajusue2t;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.juanjusue.examenjuanmajusue2t.DataHolder.DataHolder;
 import com.example.juanjusue.examenjuanmajusue2t.FireBase.FireBaseAdmin;
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }
 class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminListener {
     MainActivity mainActivity;
