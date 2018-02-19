@@ -18,6 +18,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     public DataBaseHandler databaseHandler;
 
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         String url1 = String.format("http://10.0.2.2/pruebasJSON/leeJugadores.php");
         httpJsonAsyncTask1.execute(url1);
         ////____________________________________________________\\\\\\\\\\
+
+        databaseHandler =  new DataBaseHandler(this);
+
     }
 }
 class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminListener {
@@ -60,6 +65,7 @@ class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminList
 
     }
 
+    ///_____________AQUI SE GUARDAN LOS CONTACTOS DEL MYSQL CON EL JSON AL SQLITE______________\\\
     @Override
     public void JsonOk(String x) {
         Log.v("PRUEBA2",""+x);
@@ -69,8 +75,8 @@ class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminList
 
             JSONArray json_array = object.optJSONArray("Contactos");
             for (int i = 0; i < json_array.length(); i++) {
-                this.mainActivity.databaseHandler.addContact(new Contact(Integer.parseInt(json_array.getJSONObject(i).getString("id")),json_array.getJSONObject(i).getString("nombre"),Double.parseDouble(json_array.getJSONObject(i).getString("lat")),Double.parseDouble(json_array.getJSONObject(i).getString("lon"))));
                 Log.v("PRUEBA1","ENTRA EN EL FOR"+json_array.getJSONObject(i).getString("nombre"));
+                this.mainActivity.databaseHandler.addContact(new Contact(Integer.parseInt(json_array.getJSONObject(i).getString("id")),json_array.getJSONObject(i).getString("nombre"),Double.parseDouble(json_array.getJSONObject(i).getString("lat")),Double.parseDouble(json_array.getJSONObject(i).getString("lon"))));
 
             }
 
@@ -79,5 +85,15 @@ class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminList
             FirebaseCrash.report(new Exception("Error JSON"));
         }
 
+        //__________SQL LITE PARA COMPROBAR QUE SE HAN SUBIDO CORRECTAMENTE___________\\
+        DataBaseHandler databaseHandler =  new DataBaseHandler(mainActivity);
+        List<Contact> contacts = databaseHandler.getAllContacts();
+        for (Contact cn : contacts) {
+            String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,LAT: " + cn.getLat() + " ,LONG: " + cn.getLon();
+            // Writing Contacts to log
+            Log.v("TUTORIALSQLLITE ", log);
+        }
+        //______________________________\\
     }
+    ///___________________________________________________________________________________________\\\
 }

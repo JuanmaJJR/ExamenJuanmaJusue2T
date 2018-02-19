@@ -55,7 +55,7 @@ if (isset ( $result ) && $result) { // Si pasa por este if, la query está está
 
 }
 
-$mensajeJSON = json_encode($arrContactos);
+$mensajeJSON = json_encode($arrMensaje);
 
 //echo "<pre>";  // Descomentar si se quiere ver resultado "bonito" en navegador. Solo para pruebas
 echo $mensajeJSON;
