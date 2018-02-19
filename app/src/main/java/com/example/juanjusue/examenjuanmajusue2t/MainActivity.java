@@ -10,7 +10,6 @@ import com.example.juanjusue.examenjuanmajusue2t.DataHolder.DataHolder;
 import com.example.juanjusue.examenjuanmajusue2t.FireBase.FireBaseAdmin;
 import com.example.juanjusue.examenjuanmajusue2t.FireBase.FireBaseAdminListener;
 import com.example.juanjusue.examenjuanmajusue2t.GPSAdmin.GPSTracker;
-import com.example.juanjusue.examenjuanmajusue2t.GPSAdmin.GPSTrackerEvents;
 import com.example.juanjusue.examenjuanmajusue2t.asynctasks.HttpJsonAsyncTask;
 import com.example.juanjusue.examenjuanmajusue2t.asynctasks.HttpJsonAsyncTaskListener;
 import com.example.juanjusue.examenjuanmajusue2t.sqllite.Contact;
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             gpsTracker.showSettingsAlert();
         }
-        ///______________________________\\\
+        ///______________________________________________________________________________________________\\\
 
 
     }

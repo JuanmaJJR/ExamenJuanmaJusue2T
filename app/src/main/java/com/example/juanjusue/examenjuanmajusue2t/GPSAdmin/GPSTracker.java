@@ -17,7 +17,6 @@ import android.location.LocationManager;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 /**
  * Created by guille on 15/1/18.

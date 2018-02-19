@@ -8,13 +8,9 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.example.juanjusue.examenjuanmajusue2t.DataHolder.DataHolder;
-import com.example.juanjusue.examenjuanmajusue2t.MainActivity;
 import com.example.juanjusue.examenjuanmajusue2t.sqllite.Contact;
 import com.google.firebase.crash.FirebaseCrash;
 
