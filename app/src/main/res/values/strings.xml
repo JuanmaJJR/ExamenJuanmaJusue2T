@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ExamenJuanmaJusue2T</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">dqAQ0NFW4MX6ztbKaMbHzKlxM</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">JkhdOY217Cq9scjAdp7lmNDPNOWM6AoApMa0yoJAY3qEwQUTZb</string>
 </resources>
