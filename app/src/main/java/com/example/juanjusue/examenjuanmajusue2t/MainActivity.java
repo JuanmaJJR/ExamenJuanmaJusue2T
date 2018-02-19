@@ -7,6 +7,8 @@ import android.util.Log;
 import com.example.juanjusue.examenjuanmajusue2t.DataHolder.DataHolder;
 import com.example.juanjusue.examenjuanmajusue2t.FireBase.FireBaseAdmin;
 import com.example.juanjusue.examenjuanmajusue2t.FireBase.FireBaseAdminListener;
+import com.example.juanjusue.examenjuanmajusue2t.GPSAdmin.GPSTracker;
+import com.example.juanjusue.examenjuanmajusue2t.GPSAdmin.GPSTrackerEvents;
 import com.example.juanjusue.examenjuanmajusue2t.asynctasks.HttpJsonAsyncTask;
 import com.example.juanjusue.examenjuanmajusue2t.asynctasks.HttpJsonAsyncTaskListener;
 import com.example.juanjusue.examenjuanmajusue2t.sqllite.Contact;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         DataHolder.instance.fireBaseAdmin= new FireBaseAdmin();
         MainActivityEvents events = new MainActivityEvents(this);
         DataHolder.instance.fireBaseAdmin.setListener(events);
+        databaseHandler =  new DataBaseHandler(this);
+
 
         ////_________DESCARGAR JSON DESDE PHP-MYSQL___________\\\\\\\\\\\
         HttpJsonAsyncTask httpJsonAsyncTask1=new HttpJsonAsyncTask(this);
@@ -39,7 +43,26 @@ public class MainActivity extends AppCompatActivity {
         httpJsonAsyncTask1.execute(url1);
         ////____________________________________________________\\\\\\\\\\
 
-        databaseHandler =  new DataBaseHandler(this);
+        ///_________GPS TRACKER SUBE CON TU NOMBRE DE TWITTER TU POSICION ACTUAL A FIREBASE___________\\\
+        GPSTracker gpsTracker=new GPSTracker(this);
+        if(gpsTracker.canGetLocation()){
+            Log.v("SecondActivity",gpsTracker.getLatitude()+"  "+gpsTracker.getLongitude());
+            // FBCoche fbcoche = new FBCoche(2017,"Cochecito","ferrari",gpsTracker.getLatitude(),gpsTracker.getLongitude(),"");
+
+
+            Contact contact = null;
+            try {
+                contact = new Contact(DataHolder.jsonObjectTwitter.get("UserName").toString(),gpsTracker.getLatitude(),gpsTracker.getLongitude());
+            } catch (JSONException e) {
+                FirebaseCrash.report(new Exception("Error Contacto"));
+            }
+            DataHolder.instance.fireBaseAdmin.insertarenrama("/Contacts/0",contact.toMap());
+        }
+        else{
+            gpsTracker.showSettingsAlert();
+        }
+        ///______________________________\\\
+
 
     }
 }
