@@ -77,6 +77,7 @@ public class TwitterLActivity extends AppCompatActivity {
                     datosTwitter.put("UserName", result.data.getUserName().toString());
                     datosTwitter.put("id", String.valueOf(result.data.getUserId()));
                 } catch (JSONException e) {
+                    //CRASH REPORT EXAMEN
                     FirebaseCrash.report(new Exception("CREATE JSON WITH USER DATA FAIL"));
                     e.printStackTrace();
                 }

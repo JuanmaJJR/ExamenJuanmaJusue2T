@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 contact = new Contact(DataHolder.jsonObjectTwitter.get("UserName").toString(),gpsTracker.getLatitude(),gpsTracker.getLongitude());
             } catch (JSONException e) {
+                //CRASH REPORT EXAMEN
                 FirebaseCrash.report(new Exception("Error Contacto"));
             }
             DataHolder.instance.fireBaseAdmin.insertarenrama("/Contacts/0",contact.toMap());
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
     //___________________________________\\
 
 }
+
 class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminListener {
     MainActivity mainActivity;
 
@@ -113,6 +115,7 @@ class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminList
             }
 
         } catch (JSONException e) {
+            //CRASH REPORT EXAMEN
             e.printStackTrace();
             FirebaseCrash.report(new Exception("Error JSON"));
         }
