@@ -117,6 +117,7 @@ class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminList
             FirebaseCrash.report(new Exception("Error JSON"));
         }
 
+
         //__________SQL LITE PARA COMPROBAR QUE SE HAN SUBIDO CORRECTAMENTE___________\\
         DataBaseHandler databaseHandler =  new DataBaseHandler(mainActivity);
         List<Contact> contacts = databaseHandler.getAllContacts();
