@@ -34,5 +34,21 @@
                 android:title="Send" />
         </menu>
     </item>
+    <item android:title="Examen">
+        <menu>
+            <item
+                android:id="@+id/elemen3"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Elemento 1 Juanma" />
+            <item
+                android:id="@+id/elemen2"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Elemento 2 Juanma" />
+            <item
+                android:id="@+id/elemen1"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Elemento 3 Juanma" />
+        </menu>
+    </item>
 
 </menu>

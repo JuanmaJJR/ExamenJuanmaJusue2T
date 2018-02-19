@@ -67,6 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //____METODO PARA IR AL NAVDRAWER____\\
+    public void iranav(View v){
+        Intent intent = new Intent(getBaseContext(),Main2Activity.class);
+        startActivity(intent);
+        finish();
+    }
+    //___________________________________\\
 
 }
 class MainActivityEvents implements HttpJsonAsyncTaskListener, FireBaseAdminListener {
