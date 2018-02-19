@@ -59,8 +59,8 @@ import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import DataHolder.DataHolder;
-import FireBase.FireBaseAdmin;
+import com.example.juanjusue.examenjuanmajusue2t.DataHolder.DataHolder;
+import com.example.juanjusue.examenjuanmajusue2t.FireBase.FireBaseAdmin;
 
 
 public class TwitterLActivity extends AppCompatActivity {
