@@ -93,6 +93,7 @@ public class TwitterLActivity extends AppCompatActivity {
         show_fab1= AnimationUtils.loadAnimation(this,R.anim.fab1_show);
 
 
+
         //Boton de Twitter.
         twitterLoginButton = (TwitterLoginButton) findViewById(R.id.login_button);
         twitterLoginButton.setCallback(new Callback<TwitterSession>() {
